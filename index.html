@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Quiz + Leaderboard</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="container">
+    <h1>Interactive Quiz</h1>
+    <button id="open-leaderboard" class="secondary">Leaderboard</button>
+  </header>
+
+  <main class="container" id="start-screen">
+    <h2>Welcome!</h2>
+    <p>Enter a name for the leaderboard and press Start.</p>
+    <form id="start-form">
+      <input id="player-name" type="text" placeholder="Your name" maxlength="20" required />
+      <button type="submit">Start Quiz</button>
+    </form>
+  </main>
+
+  <section class="container hidden" id="quiz-screen">
+    <div class="quiz-meta">
+      <div id="progress">Question 1 / 1</div>
+      <div id="score">Score: 0</div>
+    </div>
+
+    <h2 id="question-text"></h2>
+    <div id="choices" class="choices"></div>
+
+    <div class="actions">
+      <button id="next-btn" class="primary" disabled>Next</button>
+    </div>
+  </section>
+
+  <section class="container hidden" id="result-screen">
+    <h2>All done 🎉</h2>
+    <p id="final-score">You scored 0/0</p>
+    <div class="actions">
+      <button id="save-score" class="primary">Save to Leaderboard</button>
+      <button id="play-again" class="secondary">Play Again</button>
+    </div>
+  </section>
+
+  <dialog id="leaderboard-dialog">
+    <h3>Leaderboard (Top 10)</h3>
+    <ol id="leaderboard-list"></ol>
+    <div class="actions">
+      <button id="clear-lb" class="danger">Clear (local)</button>
+      <button id="close-leaderboard">Close</button>
+    </div>
+  </dialog>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>
